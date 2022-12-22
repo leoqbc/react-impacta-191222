@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando um script JS</title>
+</head>
+<body>
+    <h1 id="titulo_principal">Teste de programa JS simples</h1>
+
+    <button>Trocar a cor do titulo</button>
+
+    <button onclick="mudaCor()">Muda para outra cor</button>
+
+    <script>
+        var elementoH1 = document.getElementById('titulo_principal');
+
+        // selectiona o unico botão da tela
+        // no futuro pode dar problema
+        var mybutton = document.querySelector('button');
+
+        // forma que sobrescreve a ação
+        // mybutton.onclick = function () {
+        //     elementoH1.style.color = '#AE2AE2';
+        // };
+
+        // mybutton.onclick = function () {
+        //     alert('Mudou a cor do texto');
+        // };
+
+        mybutton.addEventListener('click', function () {
+            elementoH1.style.color = '#AE2AE2';
+        });
+
+        mybutton.addEventListener('click', function () {
+            alert('Mudou a cor do texto');
+        });
+
+        function mudaCor() {
+            elementoH1.style.color = '#E2AE2A';
+        }
+    </script>
+</body>
+</html>
