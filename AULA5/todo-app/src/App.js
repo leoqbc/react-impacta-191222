@@ -19,10 +19,21 @@ function App() {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
       .then(data => {
-        setTodo({
-          ...todo,
-          tasks: data
+
+        // estava gerando warning
+        // setTodo({
+        //   ...todo,
+        //   tasks: data
+        // });
+        
+        // (stateAnterior, stateNovo) => {}
+        setTodo((prev, current) => {
+          return {
+            ...current,
+            tasks: data
+          };
         });
+        
       });
     
     // IIFE
